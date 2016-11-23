@@ -5,8 +5,8 @@ require "calagator/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "grokus"
-  s.version     = '1.0.0.9'
+  s.name        = "calagator"
+  s.version     = Calagator::VERSION
   s.authors     = ["The Calagator Team"]
   s.email       = ["calagator-development@googlegroups.com"]
   s.homepage    = "https://github.com/calagator/calagator"
