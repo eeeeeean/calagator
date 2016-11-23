@@ -8,6 +8,9 @@
 Calagator
 =========
 
+Need:
+bundle exec spec/dummy/bin/rails generate rspec:install
+
 
 About
 -----

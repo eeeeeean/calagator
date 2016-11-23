@@ -1,6 +1,9 @@
 module Calagator
 
 class SiteController < Calagator::ApplicationController
+
+  before_action :authenticate_user!
+
   # Raise exception, mostly for confirming that exception_notification works
   def omfg
     raise ArgumentError, "OMFG"

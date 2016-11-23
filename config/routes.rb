@@ -1,4 +1,5 @@
 Calagator::Engine.routes.draw do
+
   get 'omfg' => 'site#omfg'
   get 'hello' => 'site#hello'
 
