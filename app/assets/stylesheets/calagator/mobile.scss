@@ -16,6 +16,12 @@
     a.expander_toggle::before {
       content: "» "; }
 
+  #today_map {
+    float: none;
+    display: block;
+    margin-bottom: 15px;
+  }
+
   #global_header {
     background: none repeat scroll 0 0 $header;
     height: 80px;

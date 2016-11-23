@@ -1,9 +1,9 @@
 Calagator.setup do |config|
   # Site name
-  config.title = 'Calagator'
+  config.title = 'grokus'
 
   # Site tagline
-  config.tagline = 'A Tech Calendar'
+  config.tagline = '.xyz /us/or/portland'
 
   # Site URL with trailing slash
   config.url = 'http://my-calagator.org/'
