@@ -79,7 +79,7 @@ module MappingHelper
           longitude: location[1],
           title: locatable_item.title,
           popup: context.link_to(locatable_item.title, locatable_item),
-          marker_color: locable_item.marker_color
+          marker_color: locatable_item.marker_color
         }
       end.compact
     end
