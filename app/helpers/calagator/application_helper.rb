@@ -9,6 +9,10 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
+  def all_venues
+    Venue.all
+  end
+
   def markdown(text)
     BlueCloth.new(text, :relaxed => true).to_html
   end
