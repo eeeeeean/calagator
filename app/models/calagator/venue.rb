@@ -83,6 +83,10 @@ class Venue < ActiveRecord::Base
     super UrlPrefixer.prefix(value)
   end
 
+  def marker_color
+    Calagator.mapping_marker_color
+  end
+
   # Display a single line address.
   def full_address
     full_address = "#{street_address}, #{locality} #{region} #{postal_code} #{country}"

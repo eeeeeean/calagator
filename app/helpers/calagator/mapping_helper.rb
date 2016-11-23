@@ -46,7 +46,6 @@ module MappingHelper
         div_id,
         center,
         zoom,
-        marker_color,
         markers,
         should_fit_bounds
       ]
@@ -79,13 +78,10 @@ module MappingHelper
           latitude: location[0],
           longitude: location[1],
           title: locatable_item.title,
-          popup: context.link_to(locatable_item.title, locatable_item)
+          popup: context.link_to(locatable_item.title, locatable_item),
+          marker_color: locable_item.marker_color
         }
       end.compact
-    end
-
-    def marker_color
-      Calagator.mapping_marker_color
     end
 
     def locatable_items
