@@ -14,6 +14,10 @@
 <% end -%>
 
 <%= semantic_form_for(event, :html => {:id => 'event_form', :class => 'standard_form', :novalidate => 'novalidate'}) do |f| %>
+    <li class="string input required" id='new_event_code' list-style-type='none;'>
+      <%= label_tag :code_label, 'Code', class: 'label' %>
+      <%= password_field_tag :code %>
+    </li>
   <%= f.inputs :name => "#{'Editing: ' unless event.new_record?} <em>#{event.title}</em>".html_safe do %>
     <%= f.input :title, label: "Event Name", input_html: { autofocus: true } %>
     <li class="string input required stringish" id="event_venue_title_input">
@@ -52,9 +56,6 @@
     <%= f.input :tag_list, :input_html => { :value => event.tag_list.to_s }, :required => false,
                 :label => 'Tags',
                 :hint => "(Tags are comma-separated keywords that make it easier to find your event and boost its position in searches. You can also use a tag like <code>plancast:plan=ABCD</code> to associate this with a particular <a href='http://plancast.com/'>Plancast</a> event, or a tag like <code>epdx:group=1234</code> to associate the event with a particular <a href='http://epdx.org/'>ePDX</a> group)".html_safe %>
-
-    <%= f.label :code %>
-    <%= password_field_tag :code %>
     <li class='trap'>
       <%= label 'trap', 'field', "Leave this field blank or we'll think you're a robot." %>
       <%= text_field_tag 'trap_field', params[:trap_field] %>

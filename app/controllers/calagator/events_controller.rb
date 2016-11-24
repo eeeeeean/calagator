@@ -9,6 +9,8 @@ class EventsController < Calagator::ApplicationController
 
   before_filter :find_and_redirect_if_locked, :only => [:edit, :update, :destroy]
 
+  before_action :check_code, only: [:create, :update, :destroy]
+
   # GET /events
   # GET /events.xml
   def index

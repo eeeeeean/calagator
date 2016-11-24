@@ -10,6 +10,8 @@ Calagator
 
 Need:
 bundle exec spec/dummy/bin/rails generate rspec:install
+Figaro checks the apps application.yml, but figaro should be installed in
+calagator
 
 
 About
