@@ -38,8 +38,6 @@
     <!-- Auto-discovery, inserted -->
     <%= yield :discovery_insert %>
 
-    <%# FIXME extract icon into theme %>
-    <link rel="apple-touch-icon" href="<%= image_path("site-icon.png") %>" />
   </head>
   <body class="<%= "#{controller.controller_name}_#{action_name}" %> <%= "#{controller.controller_name}_controller" %> <%= %w[new create edit update].include?(action_name) ? "#{controller.controller_name}_change" : "" %>">
 

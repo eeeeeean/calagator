@@ -15,6 +15,7 @@ calagator
 
 TODO:
 Make markers reflect current things
+Get things from 01_calagator like constants to compile
 
 
 About
