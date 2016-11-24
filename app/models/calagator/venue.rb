@@ -78,6 +78,8 @@ class Venue < ActiveRecord::Base
   scope :with_public_wifi, -> { where(wifi: true) }
   scope :in_business,      -> { where(closed: false) }
   scope :out_of_business,  -> { where(closed: true) }
+  scope :branch,           -> { where(branch: true) }
+  scope :ally,             -> { where(ally: true) }
 
   def self.search(query, opts={})
     SearchEngine.search(query, opts)

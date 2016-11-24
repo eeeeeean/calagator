@@ -15,9 +15,3 @@ template = "calagator/#{name.pluralize}/form"
   <%= render template, name.to_sym => record %>
 </div>
 
-<li class='input string'>
-<%= form_tag(event_path(@event), {method: :delete}, {class: 'standard_form'}) %>
-    <%= label_tag :code, 'Code', class: 'label' %>
-    <%= password_field_tag :code %>
-  <%= submit_tag :Delete %>
-</li>

@@ -1,7 +1,7 @@
 module Calagator
 
 class Venue < ActiveRecord::Base
-  class Search < Struct.new(:tag, :query, :wifi, :all, :closed, :include_closed)
+  class Search < Struct.new(:tag, :query, :wifi, :branch, :all, :closed, :include_closed)
     def initialize attributes = {}
       members.each do |key|
         send "#{key}=", attributes[key]
@@ -36,7 +36,7 @@ class Venue < ActiveRecord::Base
 
     def perform_search
       if query
-        Venue.search(query, include_closed: include_closed, wifi: wifi)
+        Venue.search(query, include_closed: include_closed, wifi: wifi, branch: branch)
       else
         base.business.wifi_status.search.scope
       end

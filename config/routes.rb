@@ -13,6 +13,8 @@ Calagator::Engine.routes.draw do
   get "admin/events"
   post "lock_event" => "admin#lock_event"
 
+  resources :branches, only: [:index]
+
   resources :events do
     collection do
       post :squash_many_duplicates

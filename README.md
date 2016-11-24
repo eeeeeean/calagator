@@ -14,8 +14,19 @@ Figaro checks the apps application.yml, but figaro should be installed in
 calagator
 
 TODO:
-Make markers reflect current things
-Get things from 01_calagator like constants to compile
+DONE Send a collection mix of events and venues to mapper
+DONE Make markers reflect current things
+DONE Get things from 01_calagator like constants to compile 
+
+Save node, show node, search by node
+''  openhouse, show '' ''
+Global map to show today's events, confirm that's what it's doing
+Dropdown to switch region, with 'region missing?' placeholder
+About page, how to get involved
+Get domain grokus.xyz
+
+
+
 
 
 About

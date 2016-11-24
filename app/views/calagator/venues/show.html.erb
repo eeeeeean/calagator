@@ -1,4 +1,7 @@
 <%= content_for :title, @venue.title %>
+<% if @venue.branch %>
+  (Branch)
+<%end%>
 
 <% content_for :discovery_insert do %>
   <link rel="alternate" type="application/x-wiki" title="Edit this page" href="<%= edit_venue_url(@venue) %>" />

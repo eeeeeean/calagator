@@ -24,7 +24,6 @@
       <%= label_tag :venue_name, "Venue", :class => 'label' %>
       <%= text_field_tag 'venue_name', '', :class=> 'autocomplete', :value => !event.venue.nil? ? event.venue.title : params[:venue_name] %>
       <%= hidden_field(:event, :venue_id, :value => (!event.venue.nil? ? event.venue.id : params[:event_venue_id])) %>
-      <%= image_tag "spinner.gif", :id=> "event_venue_loading", :style => "display: none; margin-left: 0.5em;" %>
       <p class='inline-hints'>
         Type the name of a venue to search. If it doesn't exist, we'll create it for you.
       </p>
@@ -66,3 +65,6 @@
     <%= f.action :submit %>
   <% end %>
 <% end %>
+
+
+

@@ -29,6 +29,8 @@ FactoryGirl.define do
     url             { Faker::Internet.url }
     closed          { [false, true].sample }
     wifi            { [true, false].sample }
+    branch          { [true, false].sample }
+    ally            { [true, false].sameple }
     access_notes    Faker::Lorem.paragraph
 
     trait :with_events do
