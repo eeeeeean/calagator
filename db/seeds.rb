@@ -30,7 +30,7 @@ FactoryGirl.define do
     closed          { [false, true].sample }
     wifi            { [true, false].sample }
     branch          { [true, false].sample }
-    ally            { [true, false].sameple }
+    ally            { [true, false].sample }
     access_notes    Faker::Lorem.paragraph
 
     trait :with_events do

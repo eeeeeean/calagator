@@ -6,14 +6,14 @@ class Event < ActiveRecord::Base
       # Return an Array of non-duplicate Event instances matching the search +query+..
       #
       # Options:
-      # * :order => How to order the entries? Defaults to :score. Permitted values:
+      #   * :order => How to order the entries? Defaults to :score. Permitted values:
       #   * :score => Sort with most relevant matches first
       #   * :date => Sort by date
       #   * :name => Sort by event title
       #   * :title => same as :name
       #   * :venue => Sort by venue title
-      # * :limit => Maximum number of entries to return. Defaults to 50.
-      # * :skip_old => Return old entries? Defaults to false.
+      #   * :limit => Maximum number of entries to return. Defaults to 50.
+      #   * :skip_old => Return old entries? Defaults to false.
       def self.search(*args)
         new(*args).all
       end

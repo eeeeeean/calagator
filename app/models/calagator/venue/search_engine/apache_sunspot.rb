@@ -31,6 +31,8 @@ class Venue < ActiveRecord::Base
           text :url
           boolean :closed
           boolean :wifi
+          boolean :branch
+          boolean :ally
           boolean :duplicate_for_solr do |record|
             record.duplicate_of_id.present?
           end
@@ -47,11 +49,14 @@ class Venue < ActiveRecord::Base
       end
 
       def search
+        puts "wifi true? #{wifi.inspect}"
         Venue.solr_search do
           keywords query
           order_by *order
           with :duplicate_for_solr, false
           with :wifi, true if wifi
+          with :ally, true if ally
+          with :branch, true if branch
           with :closed, false unless include_closed
         end.results.take(limit)
       end
@@ -69,6 +74,14 @@ class Venue < ActiveRecord::Base
 
       def wifi
         opts[:wifi]
+      end
+
+      def ally
+        opts[:ally]
+      end
+
+      def branch
+        opts[:branch]
       end
 
       def include_closed

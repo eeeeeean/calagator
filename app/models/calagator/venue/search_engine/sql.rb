@@ -8,7 +8,9 @@ class Venue < ActiveRecord::Base
       end
 
       def search
-        base.keywords.non_duplicates.with_wifi.in_business.order.limit.scope.to_a
+        puts "In SQL search"
+        base.keywords.non_duplicates.with_wifi
+          .with_ally.with_branch.in_business.order.limit.scope.to_a
       end
 
       protected
@@ -54,6 +56,16 @@ class Venue < ActiveRecord::Base
 
       def with_wifi
         @scope = @scope.with_public_wifi if opts[:wifi]
+        self
+      end
+
+      def with_branch
+        @scope = @scope.branch if opts[:branch]
+        self
+      end
+
+      def with_ally
+        @scope = @scope.all if opts[:ally]
         self
       end
 

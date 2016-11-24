@@ -6,7 +6,7 @@ class BranchesController < VenuesController
 
   def index
     @search = Venue::Search.new(params.permit!)
-    @venues = @search.venues.branch #make it node scope!
+    @venues = @search.venues #make it node scope!
 
     flash[:failure] = @search.failure_message
     return redirect_to venues_path if @search.hard_failure?
