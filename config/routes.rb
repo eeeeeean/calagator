@@ -16,6 +16,7 @@ Calagator::Engine.routes.draw do
   resources :events do
     collection do
       post :squash_many_duplicates
+      get :map
       get :search
       get :duplicates
       get 'tag/:tag', action: :search, as: :tag

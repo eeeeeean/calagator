@@ -31,6 +31,10 @@ class EventsController < Calagator::ApplicationController
     return redirect_to events_path, flash: { failure: e.to_s }
   end
 
+  def map
+    @events = Event.joins(:venue).within_dates(Time.now, Time.now)
+  end
+
   # GET /events/new
   # GET /events/new.xml
   def new

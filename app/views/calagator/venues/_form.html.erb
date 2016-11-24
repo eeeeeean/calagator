@@ -5,6 +5,8 @@
     </li>
     <%= f.input :title, label: "Venue Name", input_html: { autofocus: true } %>
     <%= f.input :address, :label => "Full Address", :hint => "(one-line version of full address)" %>
+    <%= f.input :openhouse, label: 'Openhouse'%>
+    <%= f.input :node,      label: 'Node' %>
 
     <% unless venue.new_record? %>
       <%= f.input :street_address %>
