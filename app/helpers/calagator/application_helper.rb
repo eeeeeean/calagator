@@ -9,8 +9,12 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
-  def all_venues
-    Venue.all
+  def portland_items
+    events = Venue.within(1000000, origin: [45.5168743,-122.2531176]).map do |v|
+      v.events.future
+    end.to_a.flatten.compact
+    standard_venues = Venue.within(1000000, origin: [45.5168743,-122.2531176])
+    events + standard_venues
   end
 
   def markdown(text)

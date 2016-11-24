@@ -71,7 +71,7 @@ module MappingHelper
       locatable_items.count > 1 && options[:center].blank?
     end
 
-    def markers
+    def markers #inject persistent/default items like hangouts
       Array(locatable_items).map do |locatable_item|
         next unless location = locatable_item.location
         {
@@ -85,6 +85,7 @@ module MappingHelper
     end
 
     def locatable_items
+      return [] unless items.any?
       @locatable_items ||= Array(items).select {|i| i.location.present? }
     end
 

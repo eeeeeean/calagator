@@ -102,9 +102,17 @@ class Event < ActiveRecord::Base
   }
 
   #---[ Overrides ]-------------------------------------------------------
+  
+  def location
+    venue.location
+  end
 
   def url=(value)
     super UrlPrefixer.prefix(value)
+  end
+
+  def marker_color
+    Calagator.mapping_marker_color
   end
 
   # Set the start_time to the given +value+, which could be a Time, Date,

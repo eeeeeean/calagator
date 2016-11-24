@@ -45,6 +45,10 @@ class Venue < ActiveRecord::Base
   has_paper_trail
   acts_as_taggable
 
+  acts_as_mappable default_units: :miles,
+                   lat_column_name: :latitude,
+                   lng_column_name: :longitude
+
   xss_foliate :sanitize => [:description, :access_notes]
   include DecodeHtmlEntitiesHack
 
