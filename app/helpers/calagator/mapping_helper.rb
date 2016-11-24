@@ -85,7 +85,6 @@ module MappingHelper
     end
 
     def locatable_items
-      return [] unless items.any?
       @locatable_items ||= Array(items).select {|i| i.location.present? }
     end
 

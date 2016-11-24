@@ -88,7 +88,7 @@ class Venue < ActiveRecord::Base
   end
 
   def marker_color
-    Calagator.mapping_marker_color
+    'blue'
   end
 
   # Display a single line address.

@@ -9,11 +9,11 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
-  def portland_items
-    events = Venue.within(1000000, origin: [45.5168743,-122.2531176]).map do |v|
+  def region_items(region, radius=REGION_RADIUS)
+    events = Venue.within(radius, origin: region ).map do |v|
       v.events.future
     end.to_a.flatten.compact
-    standard_venues = Venue.within(1000000, origin: [45.5168743,-122.2531176])
+    standard_venues = Venue.within(radius, origin: region ).to_a
     events + standard_venues
   end
 
