@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   class Overview
 
     def initialize location
-      @venues = Venue.within(REGION_RADIUS, origin: [45.5321821,-122.6648692] )
+      @venues = Venue.within(REGION_RADIUS, origin: location )
       @events = Event.where(venue_id: @venues.map(&:id))
     end
 
