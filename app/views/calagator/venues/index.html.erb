@@ -9,11 +9,10 @@
       <%= label_tag :query, "Keywords" %>
       <%= text_field_tag :query, @search.query %>
     </div>
-    <div class='wifi'>
-      <%= check_box_tag :wifi, '1', @search.wifi %>
-      <%= label_tag :wifi, "Public WiFi" %>
+    <div class='branch'>
+      <%= check_box_tag :branch, '1', @search.branch %>
+      <%= label_tag :branch, 'Branch' %>
     </div>
-
     <div class='submit'>
       <%= submit_tag "Search" %>
     </div>

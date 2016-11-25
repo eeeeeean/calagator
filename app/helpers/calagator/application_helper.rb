@@ -9,6 +9,10 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
+  def current_region
+    session[:region] ||= 'us_or_portland'
+  end
+
   def region_items(region, radius=REGION_RADIUS)
     venues = Venue.within(radius, origin: region)
     events = Event.joins(:venue).within_dates(Time.now, Time.now)
@@ -16,6 +20,10 @@ module ApplicationHelper
     standard_venues = Venue.within(radius, origin: region )
       .where.not(id: events.map(&:venue_id)).to_a
     events + standard_venues
+  end
+
+  def events_near_node
+
   end
 
   def markdown(text)

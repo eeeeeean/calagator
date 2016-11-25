@@ -12,10 +12,14 @@ Calagator.setup do |config|
   # and requests for assistance from users:
   config.administrator_email = 'your@email.addr'
 
-  US_OR_PORTLAND = [45.532182,-122.6648692]
-  US_NY_NY       = [40.7250231,-74.0056809]
+  LOC_HASH = {
+    us_or_portland: [45.532182,-122.6648692],
+    us_ny_ny:      [40.7250231,-74.0056809]
+  }
 
-  # Optional username and password to use when accessing /admin pages
+  REGION_RADIUS = 40
+
+   # Optional username and password to use when accessing /admin pages
   # config.admin_username = 'admin'
   # config.admin_password = ENV['CALAGATOR_ADMIN_PASSWORD']
 
