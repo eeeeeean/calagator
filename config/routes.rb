@@ -13,7 +13,9 @@ Calagator::Engine.routes.draw do
   get "admin/events"
   post "lock_event" => "admin#lock_event"
 
-  resources :branches, only: [:index]
+  resources :branches do
+    get :map, on: :collection
+  end
 
   resources :events do
     collection do

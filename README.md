@@ -19,6 +19,7 @@ DONE Make markers reflect current things
 DONE Get things from 01_calagator like constants to compile 
 
 Save node, show node, search by node
+Other searches, actions, information (events)
 ''  openhouse, show '' ''
 Global map to show today's events, confirm that's what it's doing
 Dropdown to switch region, with 'region missing?' placeholder
