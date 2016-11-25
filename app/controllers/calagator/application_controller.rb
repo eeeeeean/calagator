@@ -21,11 +21,11 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token, if: :json_request?
 
   def current_location
-    LOC_HASH[current_region.to_sym] ||= LOC_HASH[:us_or_portland]
+    LOC_HASH[current_region.to_sym] ||= LOC_HASH['Portland, OR, USA']
   end
 
   def current_region
-    session[:region] ||= 'us_or_portland'
+    session[:region] ||= 'Portland, OR, USA'
   end
 
 protected

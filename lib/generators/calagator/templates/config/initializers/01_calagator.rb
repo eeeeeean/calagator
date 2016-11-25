@@ -13,8 +13,8 @@ Calagator.setup do |config|
   config.administrator_email = 'your@email.addr'
 
   LOC_HASH = {
-    us_or_portland: [45.532182,-122.6648692],
-    us_ny_ny:      [40.7250231,-74.0056809]
+    'Portland, OR, USA' => [45.532182,-122.6648692],
+    'New York, NY, USA' => [40.7250231,-74.0056809]
   }
 
   REGION_RADIUS = 40

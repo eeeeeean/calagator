@@ -2,11 +2,13 @@
 <div id="today_map">
   <h1>On the map</h1>
     <div id='front_page_map' class='front_page_map'>
-      <%= map region_items(LOC_HASH[:us_or_portland], 1000000), Calagator.venues_map_options %>
+      <%= map region_items(LOC_HASH['Portland, OR, USA'], 1000000), Calagator.venues_map_options %>
     </div>
 </div>
 <div id="whats_happening">
-  <h1>What's happening?</h1>
+  <h1>What's happening in
+    <%= select_tag :region, options_from_collection_for_select(LOC_HASH, :first, :first) %>
+  </h1>
   <h3><%= link_to("View All &raquo;".html_safe, events_path(:anchor => "event-#{@overview.more.id}")) if @overview.more %></h3>
   <div class='coming_events' id='today'>
     <h3>Today</h3>

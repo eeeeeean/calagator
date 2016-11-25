@@ -9,10 +9,6 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
-  def current_region
-    session[:region] ||= 'us_or_portland'
-  end
-
   def region_items(region, radius=REGION_RADIUS)
     venues = Venue.within(radius, origin: region)
     events = Event.joins(:venue).within_dates(Time.now, Time.now)
