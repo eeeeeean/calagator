@@ -2,13 +2,15 @@
 <div id="today_map">
   <h1>On the map</h1>
     <div id='front_page_map' class='front_page_map'>
-      <%= map region_items(@current_location, 1000000), Calagator.venues_map_options %>
+      <%= map region_items(@current_location, REGION_RADIUS), Calagator.venues_map_options %>
     </div>
 </div>
 <div id="whats_happening">
   <h1>What's happening in
     <%= select_tag :region, options_from_collection_for_select(LOCATIONS, 
-                                                               :name, :name, selected: session[:region]), 
+                                                               :name, 
+                                                               :name, 
+                                                               selected: session[:region]), 
       onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
       id: 'region-select' %>
   </h1>

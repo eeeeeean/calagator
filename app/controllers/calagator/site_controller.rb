@@ -37,6 +37,7 @@ class SiteController < Calagator::ApplicationController
   end
 
   def set_current_location
+    session[:region] = params[:region] if params[:region]
     @current_location = current_location
   end
 end

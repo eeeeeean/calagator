@@ -14,7 +14,8 @@ Calagator.setup do |config|
 
   LOCATIONS = [
     { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692] },
-    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809] }
+    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809] },
+    { name: 'Toyko, Japan',      gps: [35.6735408,139.5703016] }
   ]
 
   REGION_RADIUS = 40
