@@ -2,6 +2,8 @@ module Calagator
 
 class SiteController < Calagator::ApplicationController
 
+  before_action :set_current_location, only: [:index]
+
   # Raise exception, mostly for confirming that exception_notification works
   def omfg
     raise ArgumentError, "OMFG"
@@ -32,6 +34,10 @@ class SiteController < Calagator::ApplicationController
   def defunct
     @url = params[:url]
     raise ArgumentError if /^javascript:/.match(@url)
+  end
+
+  def set_current_location
+    @current_location = current_location
   end
 end
 

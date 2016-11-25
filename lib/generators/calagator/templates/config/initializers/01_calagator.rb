@@ -12,10 +12,10 @@ Calagator.setup do |config|
   # and requests for assistance from users:
   config.administrator_email = 'your@email.addr'
 
-  LOC_HASH = {
-    'Portland, OR, USA' => [45.532182,-122.6648692],
-    'New York, NY, USA' => [40.7250231,-74.0056809]
-  }
+  LOCATIONS = [
+    { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692] },
+    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809] }
+  ]
 
   REGION_RADIUS = 40
 
