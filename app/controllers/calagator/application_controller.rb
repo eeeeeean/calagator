@@ -20,6 +20,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '8813a7fec0bb4fbffd283a3868998eed'
   skip_before_action :verify_authenticity_token, if: :json_request?
 
+  def current_location
+    LOC_HASH[current_region.to_sym] ||= LOC_HASH[:us_or_portland]
+  end
+
+  def current_region
+    session[:region] ||= 'us_or_portland'
+  end
+
 protected
 
   def check_code

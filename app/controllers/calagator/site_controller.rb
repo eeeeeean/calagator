@@ -13,7 +13,7 @@ class SiteController < Calagator::ApplicationController
   end
 
   def index
-    @overview = Event::Overview.new
+    @overview = Event::Overview.new current_location
     respond_to do |format|
       format.html { }
       format.any  { redirect_to events_path(format: params[:format]) }
