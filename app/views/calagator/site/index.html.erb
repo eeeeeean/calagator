@@ -7,7 +7,7 @@
 </div>
 <div id="whats_happening">
   <h1>What's happening in
-    <%= select_tag :region, options_from_collection_for_select(LOCATIONS, :first, :first), 
+    <%= select_tag :region, options_from_collection_for_select(LOCATIONS, :name, :name), 
       onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
       id: 'region-select' %>
   </h1>
