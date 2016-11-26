@@ -8,11 +8,11 @@ class VenuesController < Calagator::ApplicationController
   require_admin only: [:duplicates, :squash_many_duplicates]
 
   before_action :check_code, only: [:create, :update, :destroy]
+  before_action :check_for_red_button, only: [:update]
 
   def venue
     @venue ||= params[:id] ? Venue.find(params[:id]) : Venue.new
   end
-
 
   # GET /venues
   def index
@@ -152,12 +152,21 @@ class VenuesController < Calagator::ApplicationController
     Destroy.new(self).call
   end
 
+  def check_for_red_button
+    if params[:venue][:red_button]
+      if params[:venue][:red_button] == '1'
+        Destroy.new(self).call
+      end
+    end
+  end
+
   class Destroy < SimpleDelegator
     def call
       prevent_destruction_of_venue_with_events or destroy
     end
 
     private
+
 
     def prevent_destruction_of_venue_with_events
       return if venue.events.none?

@@ -60,6 +60,10 @@
     <%= f.input :tag_list, :input_html => { :value => event.tag_list.to_s }, :required => false,
                 :label => 'Tags',
                 :hint => "(Tags are comma-separated keywords that make it easier to find your event and boost its position in searches. You can also use a tag like <code>plancast:plan=ABCD</code> to associate this with a particular <a href='http://plancast.com/'>Plancast</a> event, or a tag like <code>epdx:group=1234</code> to associate the event with a particular <a href='http://epdx.org/'>ePDX</a> group)".html_safe %>
+    <li class='input error' id='red_button_input'>
+      <%= f.check_box :red_button %>
+      <%= label_tag :red_button, 'Destroy?', class: 'label' %>
+    </li>
     <li class='trap'>
       <%= label 'trap', 'field', "Leave this field blank or we'll think you're a robot." %>
       <%= text_field_tag 'trap_field', params[:trap_field] %>

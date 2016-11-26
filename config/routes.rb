@@ -17,7 +17,7 @@ Calagator::Engine.routes.draw do
     get :map, on: :collection
   end
 
-  resources :events do
+  resources :events, except: [:destroy] do
     collection do
       post :squash_many_duplicates
       get :map
@@ -37,7 +37,7 @@ Calagator::Engine.routes.draw do
     end
   end
 
-  resources :venues do
+  resources :venues, except: [:destroy] do
     collection do
       post :squash_many_duplicates
       get :map

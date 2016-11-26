@@ -52,6 +52,8 @@ class Venue < ActiveRecord::Base
   xss_foliate :sanitize => [:description, :access_notes]
   include DecodeHtmlEntitiesHack
 
+  attr_accessor :red_button
+
   # Associations
   has_many :events, -> { non_duplicates }, dependent: :nullify
   belongs_to :source

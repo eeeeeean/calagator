@@ -44,6 +44,8 @@ class Event < ActiveRecord::Base
 
   include DecodeHtmlEntitiesHack
 
+  attr_accessor :red_button
+
   # Associations
   belongs_to :venue, :counter_cache => true
   belongs_to :source

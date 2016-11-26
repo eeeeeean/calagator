@@ -42,6 +42,10 @@
                   :hint => venue.location \
                             ? "([#{venue.latitude}, #{venue.longitude}] currently; if checked, we'll try again.)" \
                             : "(if checked, we'll try to determine a map position for this venue.)" %>
+      <li class='input error'>
+        <%= f.check_box :red_button %>
+        <%= label_tag :red_button, 'Destroy?', class: 'label' %>
+      </li>
     <% end %>
 
     <li class='trap'>

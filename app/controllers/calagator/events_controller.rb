@@ -10,6 +10,7 @@ class EventsController < Calagator::ApplicationController
   before_filter :find_and_redirect_if_locked, :only => [:edit, :update, :destroy]
 
   before_action :check_code, only: [:create, :update, :destroy]
+  before_action :check_for_red_button, only: [:update]
 
   # GET /events
   # GET /events.xml
@@ -93,7 +94,15 @@ class EventsController < Calagator::ApplicationController
     end
   end
 
-  # GET /events/search
+  def check_for_red_button
+    if params[:event][:red_button]
+      if params[:event][:red_button] == '1'
+        destroy
+      end
+    end
+  end
+
+# GET /events/search
   def search
     @search = Event::Search.new(params)
 

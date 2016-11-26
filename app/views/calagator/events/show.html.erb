@@ -64,10 +64,9 @@
     <% else %>
     <p>
       You can 
-      <%= link_to "edit", edit_event_url(@event) %>,
-      <%= link_to "clone", clone_event_url(@event) %>,
-      or 
-      <%= link_to "delete", event_url(@event), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "edit", edit_event_url(@event) %>
+      or
+      <%= link_to "clone", clone_event_url(@event) %>
       this event.
     </p>
     <% end %>
