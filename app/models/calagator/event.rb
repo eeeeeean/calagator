@@ -112,7 +112,7 @@ class Event < ActiveRecord::Base
   end
 
   def marker_color
-    Calagator.mapping_marker_color
+    'FE2EF7' #pink
   end
 
   # Set the start_time to the given +value+, which could be a Time, Date,
