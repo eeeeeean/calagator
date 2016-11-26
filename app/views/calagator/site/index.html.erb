@@ -28,7 +28,7 @@
     <%= render 'calagator/events/list', :events => @overview.later %>
   </div>
   <div>
-    <h3><%= link_to("View future events &raquo;".html_safe, events_path(:anchor => "event-#{@overview.more.id}")) if @overview.more %></h3>
+    <h3><%= link_to("View future events &raquo;".html_safe, regional_index_events_path) if @overview.more %></h3>
   </div>
 </div>
 <% end %>
