@@ -109,6 +109,11 @@ class Event < ActiveRecord::Base
     venue.location
   end
 
+  def self.within(radius, location)
+    venues = Venue.within(radius, location)
+    where(venue_id: venues.map(&:id))
+  end
+
   def url=(value)
     super UrlPrefixer.prefix(value)
   end

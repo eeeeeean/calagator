@@ -1,10 +1,11 @@
 module Calagator
   class Event < ActiveRecord::Base
     class Browse < Struct.new(:order, :date, :time)
-      def initialize(attributes={})
+      def initialize(attributes={}, location)
         members.each do |key|
           send "#{key}=", attributes[key]
         end
+        @location = location
       end
 
       def events
@@ -38,7 +39,11 @@ module Calagator
       protected
 
       def scope
-        @scope ||= Event.non_duplicates.includes(:venue, :tags)
+        if @location
+          @scope ||= Event.within(REGION_RADIUS, origin: @location)
+        else
+          @scope ||= Event.non_duplicates.includes(:venue, :tags)
+        end
       end
 
       def sort

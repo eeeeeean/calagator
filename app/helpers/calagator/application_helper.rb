@@ -16,6 +16,10 @@ module ApplicationHelper
     events + standard_venues
   end
 
+  def current_region
+    session[:region]
+  end
+
   def events_near_node
 
   end
