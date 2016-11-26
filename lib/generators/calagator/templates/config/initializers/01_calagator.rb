@@ -13,10 +13,10 @@ Calagator.setup do |config|
   config.administrator_email = 'your@email.addr'
 
   LOCATIONS = [
-    { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692] },
-    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809] },
-    { name: 'Toyko, Japan',      gps: [35.6735408,139.5703016] },
-    { name: 'Luanda, Angola',    gps: [-8.8533562,8.8016795]   }
+    { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692], zoom: 12 },
+    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809], zoom: 12},
+    { name: 'Toyko, Japan',      gps: [35.6735408,139.5703016], zoom: 12},
+    { name: 'Luanda, Angola',    gps: [-8.8533562,13.2140636],   zoom: 12}
   ]
 
   REGION_RADIUS = 1000000

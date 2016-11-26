@@ -9,11 +9,10 @@ module ApplicationHelper
     sanitize(auto_link(upgrade_br(markdown(string))))
   end
 
-  def region_items(region, radius=REGION_RADIUS)
-    venues = Venue.within(radius, origin: region)
-    events = Event.within_dates(Time.now, Time.now).where(venue_id: venues.map(&:id)).to_a
-    standard_venues = venues.where.not(id: events.map(&:venue_id)).to_a
-    events + standard_venues
+  def all_items
+    venues = (Venue.ally + Venue.branch).to_a
+    events = Event.within_dates(Time.now, Time.now).to_a
+    venues + events
   end
 
   def current_region
