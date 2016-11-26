@@ -1,7 +1,7 @@
 module Calagator
 
 class Venue < ActiveRecord::Base
-  class Search < Struct.new(:tag, :query, :wifi, :branch, :all, :closed, :include_closed)
+  class Search < Struct.new(:tag, :query, :wifi, :branch, :ally, :all, :closed, :include_closed)
     def initialize attributes = {}
       puts "attributes are: #{attributes.inspect}"
       members.each do |key|
@@ -37,10 +37,10 @@ class Venue < ActiveRecord::Base
 
     def perform_search
       if query
-        puts "There is a query"
-        Venue.search(query, include_closed: include_closed, wifi: wifi, branch: branch)
+        puts "perform_search ally #{ally.inspect}"
+        Venue.search(query, include_closed: include_closed, wifi: wifi, branch: branch, ally: ally)
       else
-        base.business.wifi_status.branch_status.search.scope
+        base.business.wifi_status.branch_status.ally_status.search.scope
       end
     rescue ActiveRecord::StatementInvalid => e
       @failure_message = "There was an error completing your search."
@@ -69,6 +69,12 @@ class Venue < ActiveRecord::Base
 
     def branch_status
       @scope = @scope.branch if branch
+      self
+    end
+
+    def ally_status
+      puts "ally_status #{ally.inspect}"
+      @scope = @scope.ally if ally
       self
     end
 

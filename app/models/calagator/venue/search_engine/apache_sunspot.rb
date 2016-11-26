@@ -55,8 +55,8 @@ class Venue < ActiveRecord::Base
           order_by *order
           with :duplicate_for_solr, false
           with :wifi, true if wifi
-          with :ally, true if ally
           with :branch, true if branch
+          with :ally, true if ally
           with :closed, false unless include_closed
         end.results.take(limit)
       end

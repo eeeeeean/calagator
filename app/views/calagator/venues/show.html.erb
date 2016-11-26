@@ -55,6 +55,16 @@
     <% end %>
 
     <div class='info'>
+      Ally?
+      <%= @venue.ally %>
+    </div>
+    <div class='info'>
+      Branch?
+      <%= @venue.branch %>
+    </div>
+
+    <br>
+    <div class='info'>
       <% if @venue.url.present? %>
         <div class='url'><%= link_to(truncate(url_for(@venue.url), :length => 60), url_for(@venue.url), :rel => "nofollow") %></div>
       <% end %>

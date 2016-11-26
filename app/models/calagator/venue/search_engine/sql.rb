@@ -65,7 +65,7 @@ class Venue < ActiveRecord::Base
       end
 
       def with_ally
-        @scope = @scope.all if opts[:ally]
+        @scope = @scope.ally if opts[:ally]
         self
       end
 
