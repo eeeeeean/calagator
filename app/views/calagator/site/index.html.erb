@@ -1,6 +1,6 @@
 <% cache(Calagator::CacheObserver.daily_key_for("site_index", request)) do %>
 <div id="today_map">
-  <h1>On the map</h1>
+  <h1>Events happening today</h1>
     <div id='front_page_map' class='front_page_map'>
       <%= map region_items(@current_location, REGION_RADIUS), Calagator.venues_map_options %>
     </div>

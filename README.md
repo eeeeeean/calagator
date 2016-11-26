@@ -23,6 +23,7 @@ DONE Other searches, actions, information (events)
 DONE ''  openhouse, show '' ''
 DONE Global map to show today's events, confirm that's what it's doing
 DONE Dropdown to switch region, with 'region missing?' placeholder
+Map legend
 About page, how to get involved
 Get domain grokus.xyz
 
