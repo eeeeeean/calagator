@@ -7,6 +7,8 @@ class VenuesController < Calagator::ApplicationController
   include DuplicateChecking::ControllerActions
   require_admin only: [:duplicates, :squash_many_duplicates]
 
+  before_action :check_code, only: [:create, :update, :destroy]
+
   def venue
     @venue ||= params[:id] ? Venue.find(params[:id]) : Venue.new
   end

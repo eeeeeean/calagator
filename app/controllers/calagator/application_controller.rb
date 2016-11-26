@@ -36,8 +36,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def check_code
-    puts ENV['talking'].inspect
-    raise 'error' unless ENV.any? { |e| e[0] == params[:code] }
+    raise 'error' unless ENV.any? { |e| e[1] == params[:code] }
   end
 
   def json_request?
