@@ -14,11 +14,16 @@
 <% end -%>
 
 <%= semantic_form_for(event, :html => {:id => 'event_form', :class => 'standard_form', :novalidate => 'novalidate'}) do |f| %>
-    <li class="string input required" id='new_event_code' list-style-type='none;'>
-      <%= label_tag :code_label, 'Code', class: 'label' %>
-      <%= password_field_tag :code %>
-    </li>
   <%= f.inputs :name => "#{'Editing: ' unless event.new_record?} <em>#{event.title}</em>".html_safe do %>
+    <%= render 'layouts/code_input' %>
+    <li class='string input'>
+      <%= label_tag :emergency, 'Emergency?', class: 'label' %>
+      <%= check_box_tag :emergency %>
+    </li>
+    <li class='string input'>
+      <%= label_tag :featured, 'Featured?', class: 'label' %>
+      <%= check_box_tag :featured %>
+    </li>
     <%= f.input :title, label: "Event Name", input_html: { autofocus: true } %>
     <li class="string input required stringish" id="event_venue_title_input">
       <%= label_tag :venue_name, "Venue", :class => 'label' %>
