@@ -11,10 +11,8 @@ module ApplicationHelper
 
   def region_items(region, radius=REGION_RADIUS)
     venues = Venue.within(radius, origin: region)
-    events = Event.joins(:venue).within_dates(Time.now, Time.now)
-      .where(venue_id: venues.map(&:id)).to_a
-    standard_venues = Venue.within(radius, origin: region )
-      .where.not(id: events.map(&:venue_id)).to_a
+    events = Event.within_dates(Time.now, Time.now).where(venue_id: venues.map(&:id)).to_a
+    standard_venues = venues.where.not(id: events.map(&:venue_id)).to_a
     events + standard_venues
   end
 

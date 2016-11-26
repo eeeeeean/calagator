@@ -112,7 +112,7 @@ class Event < ActiveRecord::Base
   end
 
   def marker_color
-    'FE2EF7' #pink
+    'red'
   end
 
   # Set the start_time to the given +value+, which could be a Time, Date,

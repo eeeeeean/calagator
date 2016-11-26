@@ -27,6 +27,7 @@ module MappingHelper
 
   def map(items, options = {})
     options.symbolize_keys!
+    puts "def map items.event: #{items.select{|e| e.class == Event}.inspect}"
     Map.new(items, self, options).render
   end
 
@@ -72,6 +73,7 @@ module MappingHelper
     end
 
     def markers #inject persistent/default items like hangouts
+      puts "Locatable event items: #{locatable_items.select{|e| e.class == Event}}"
       Array(locatable_items).map do |locatable_item|
         next unless location = locatable_item.location
         {
@@ -85,6 +87,7 @@ module MappingHelper
     end
 
     def locatable_items
+      puts "Items before locatable: #{items.select{|e| e.class == Event}.inspect}"
       @locatable_items ||= Array(items).select {|i| i.location.present? }
     end
 
