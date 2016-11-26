@@ -24,6 +24,7 @@ Calagator::Engine.routes.draw do
       get :search
       get :duplicates
       get 'tag/:tag', action: :search, as: :tag
+      get :regional_index
     end
 
     member do

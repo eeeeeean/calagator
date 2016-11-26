@@ -21,6 +21,15 @@ class EventsController < Calagator::ApplicationController
     render_events @events
   end
 
+  def regional_index
+    @browse = Event::Browse.new(params)
+    venues = Venue.within(REGION_RADIUS, origin: current_location)
+    @events = @browse.events.where(venue_id: venues.map(&:id))
+    puts "@events.count #{@events.count}"
+    @browse.errors.each { |error| append_flash :failure, error }
+    render_events @events
+  end
+
   # GET /events/1
   # GET /events/1.xml
   def show
