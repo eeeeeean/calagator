@@ -1,7 +1,7 @@
 module Calagator
   class Event < ActiveRecord::Base
     class Browse < Struct.new(:order, :date, :time)
-      def initialize(attributes={}, location)
+      def initialize(attributes={}, location=nil)
         members.each do |key|
           send "#{key}=", attributes[key]
         end

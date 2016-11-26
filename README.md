@@ -18,9 +18,9 @@ DONE Send a collection mix of events and venues to mapper
 DONE Make markers reflect current things
 DONE Get things from 01_calagator like constants to compile 
 
-Save node, show node, search by node
-Other searches, actions, information (events)
-''  openhouse, show '' ''
+DONE Save node, show node, search by node
+DONE Other searches, actions, information (events)
+DONE ''  openhouse, show '' ''
 DONE Global map to show today's events, confirm that's what it's doing
 DONE Dropdown to switch region, with 'region missing?' placeholder
 About page, how to get involved
