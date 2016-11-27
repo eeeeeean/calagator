@@ -1,6 +1,9 @@
 module Calagator
 
 class SourcesController < Calagator::ApplicationController
+
+  before_action :check_code, only: [:import, :create, :update, :destroy]
+
   # POST /import
   # POST /import.xml
   def import
