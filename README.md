@@ -8,10 +8,16 @@
 Calagator
 =========
 
-Need:
-bundle exec spec/dummy/bin/rails generate rspec:install
-Figaro checks the apps application.yml, but figaro should be installed in
-calagator
+This is a gem you'll need to build yourself:
+    gem build calagator.gemspec
+
+Then create a new app with:
+    calagator new my_app
+
+You'll need a user and password in `application.yml` that follows this pattern:
+    foo@bar.com: password123
+
+
 
 TODO:
 DONE Send a collection mix of events and venues to mapper
