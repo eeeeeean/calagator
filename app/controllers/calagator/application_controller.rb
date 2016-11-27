@@ -62,9 +62,10 @@ protected
     return @_link_class_cache ||= {
       :events => (( controller_name == 'events' ||
                     controller_name == 'sources' ||
-                    controller_name == 'site')  && 'active'),
+                    controller_name == 'site' && action_name == 'index')  && 'active'),
       :venues => (controller_name == 'venues'  && 'active'),
-      :branches => (controller_name == 'branches' && 'active')
+      :branches => (controller_name == 'branches' && 'active'),
+      :contact => (controller_name == 'site' && action_name == 'contact' && 'active')
     }
   end
   helper_method :link_class

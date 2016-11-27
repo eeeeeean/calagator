@@ -25,6 +25,9 @@ class SiteController < Calagator::ApplicationController
   # Displays the about page.
   def about; end
 
+  # Displays the contact page
+  def contact; end
+
   def opensearch
     respond_to do |format|
       format.xml { render :content_type => 'application/opensearchdescription+xml' }
