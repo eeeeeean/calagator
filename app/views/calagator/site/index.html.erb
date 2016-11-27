@@ -2,7 +2,8 @@
 <div id="today_map">
   <h1>Events happening today</h1>
     <div id='front_page_map' class='front_page_map'>
-      <%= map all_items, Calagator.venues_map_options.merge(center: @current_location) %>
+      <%= map all_items, Calagator.venues_map_options
+      .merge(center: @current_region[:gps], zoom: @current_region[:zoom]) %>
     </div>
 </div>
 <div id="whats_happening">

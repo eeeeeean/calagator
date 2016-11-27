@@ -2,7 +2,7 @@ module Calagator
 
 class SiteController < Calagator::ApplicationController
 
-  before_action :set_current_location, only: [:index]
+  before_action :set_current_region, only: [:index]
 
   # Raise exception, mostly for confirming that exception_notification works
   def omfg
@@ -36,9 +36,9 @@ class SiteController < Calagator::ApplicationController
     raise ArgumentError if /^javascript:/.match(@url)
   end
 
-  def set_current_location
+  def set_current_region
     session[:region] = params[:region] if params[:region]
-    @current_location = current_location
+    @current_region = current_region_hash
   end
 end
 
