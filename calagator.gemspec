@@ -51,8 +51,7 @@ Gem::Specification.new do |s|
   s.add_dependency "utf8-cleaner", "~> 0.0.6"
   s.add_dependency "validate_url", "~> 1.0"
   s.add_dependency "will_paginate", "~> 3.0"
-
-  s.add_dependency 'devise', '~> 4.2.0'
+  s.add_dependency "sqlite3", "~> 1.3"
 
   s.add_development_dependency "appraisal", "~> 2.0"
   s.add_development_dependency "capybara", "~> 2.4"
@@ -67,7 +66,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-its", "~> 1.1"
   s.add_development_dependency "rspec-rails", "~> 3.2"
   s.add_development_dependency "simplecov", "~> 0.10.0"
-  s.add_development_dependency "sqlite3", "~> 1.3"
   s.add_development_dependency "sunspot_solr",  "~> 2.1"
   s.add_development_dependency "timecop", "~> 0.7.1"
   s.add_development_dependency "webmock", "~> 1.20"
