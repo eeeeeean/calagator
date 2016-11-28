@@ -5,8 +5,11 @@
 [![Dependency Status](https://gemnasium.com/calagator/calagator.svg)](https://gemnasium.com/calagator/calagator)
 
 
-Calagator
+Grokus - a fork of Calagator (www.calagator.org)
 =========
+
+Just to make things confusing I have left all references to Calagator in the
+code.
 
 This is a gem you'll need to build yourself:
     gem build calagator.gemspec
@@ -14,27 +17,9 @@ This is a gem you'll need to build yourself:
 Then create a new app with:
     calagator new my_app
 
+Figaro manages the codes.
 You'll need a user and password in `application.yml` that follows this pattern:
     foo@bar.com: password123
-
-
-
-TODO:
-DONE Send a collection mix of events and venues to mapper
-DONE Make markers reflect current things
-DONE Get things from 01_calagator like constants to compile 
-
-DONE Save node, show node, search by node
-DONE Other searches, actions, information (events)
-DONE ''  openhouse, show '' ''
-DONE Global map to show today's events, confirm that's what it's doing
-DONE Dropdown to switch region, with 'region missing?' placeholder
-Map legend
-About page, how to get involved
-Get domain grokus.xyz
-
-
-
 
 
 About
