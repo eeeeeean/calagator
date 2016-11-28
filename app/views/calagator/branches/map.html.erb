@@ -1,4 +1,5 @@
 <h1>Big Map of Branches</h1>
+<%= 'No branches yet' if !@branches.present? %>
 <div id='venues_map'>
   <%= map @branches, Calagator.venues_map_options %>
 </div>

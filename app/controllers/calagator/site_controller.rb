@@ -9,6 +9,13 @@ class SiteController < Calagator::ApplicationController
     raise ArgumentError, "OMFG"
   end
 
+  def code_error
+  end
+
+  def today
+    @events = Event.joins(:venue).within_dates(Time.now, Time.now)
+  end
+
   # Render something to help benchmark stack without the views
   def hello
     render :text => "hello"
@@ -26,7 +33,7 @@ class SiteController < Calagator::ApplicationController
   def about; end
 
   # Displays the contact page
-  def contact; end
+  def faq; end
 
   def opensearch
     respond_to do |format|

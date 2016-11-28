@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def check_code
-    raise 'error' unless ENV.any? { |e| e[1] == params[:code] }
+    redirect_to code_error_path unless ENV.any? { |e| e[1] == params[:code] }
   end
 
   def json_request?
@@ -65,7 +65,7 @@ protected
                     controller_name == 'site' && action_name == 'index')  && 'active'),
       :venues => (controller_name == 'venues'  && 'active'),
       :branches => (controller_name == 'branches' && 'active'),
-      :contact => (controller_name == 'site' && action_name == 'contact' && 'active')
+      :faq => (controller_name == 'site' && action_name == 'faq' && 'active')
     }
   end
   helper_method :link_class

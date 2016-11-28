@@ -4,7 +4,11 @@ Calagator::Engine.routes.draw do
   get 'hello' => 'site#hello'
 
   get 'about' => 'site#about'
-  get 'contact' => 'site#contact'
+  get 'faq' => 'site#faq'
+
+  get 'today' => 'site#today'
+
+  get 'code_error' => 'site#code_error'
 
   get 'opensearch.:format' => 'site#opensearch'
   get 'defunct' => 'site#defunct'
