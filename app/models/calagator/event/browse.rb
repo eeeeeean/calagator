@@ -1,3 +1,4 @@
+require 'geokit-rails'
 module Calagator
   class Event < ActiveRecord::Base
     class Browse < Struct.new(:order, :date, :time)

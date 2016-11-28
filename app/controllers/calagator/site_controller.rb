@@ -1,3 +1,5 @@
+require 'geokit-rails'
+
 module Calagator
 
 class SiteController < Calagator::ApplicationController

@@ -1,4 +1,5 @@
 require "calagator/duplicate_checking/controller_actions"
+require 'geokit-rails'
 
 module Calagator
 
