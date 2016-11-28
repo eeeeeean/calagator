@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "font-awesome-rails", "~> 4.3"
   s.add_dependency "formtastic", "~> 3.1"
   s.add_dependency "geokit", "~> 1.9.0"
+  s.add_dependency "geokit-rails", "~> 2.2.0"
   s.add_dependency "htmlentities", "~> 4.3"
   s.add_dependency "jquery-rails"
   s.add_dependency "jquery-ui-rails", "~> 5.0"
