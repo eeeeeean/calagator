@@ -1,4 +1,3 @@
-require 'geokit-rails'
 module Calagator
 
 class Event < ActiveRecord::Base

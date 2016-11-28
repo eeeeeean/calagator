@@ -34,7 +34,6 @@ require "paper_trail"
 require "loofah-activerecord"
 require "loofah/activerecord/xss_foliate"
 require "validate_url"
-require "geokit-rails"
 
 module Calagator
 

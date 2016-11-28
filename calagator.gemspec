@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "acts-as-taggable-on", "~> 3.5"
   s.add_dependency "bluecloth", "~> 2.2"
+  s.add_dependency "figaro", "~> 1.1.1"
   s.add_dependency "font-awesome-rails", "~> 4.3"
   s.add_dependency "formtastic", "~> 3.1"
   s.add_dependency "geokit", "~> 1.9.0"

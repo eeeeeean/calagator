@@ -15,11 +15,7 @@ gem "turbolinks"
 gem "byebug", platform: "mri"
 
 #####IAN
-gem 'puma'
 gem 'figaro'
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'geokit-rails'
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
