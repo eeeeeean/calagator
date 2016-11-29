@@ -1,13 +1,13 @@
 <% cache(Calagator::CacheObserver.daily_key_for("site_index", request)) do %>
-<div id='region_selector'>
-  <h1>What's happening in
-    <%= select_tag :region, options_from_collection_for_select(LOCATIONS, 
-                                                               :name, 
-                                                               :name, 
-                                                               selected: session[:region]), 
-      onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
-      id: 'region-select' %>
+<div id='region-selector'>
+  <h1 id='whats-happening-hi1'>What's happening in
   </h1>
+    <%= select_tag :region, options_from_collection_for_select(LOCATIONS, 
+                                                             :name, 
+                                                             :name, 
+                                                             selected: session[:region]), 
+      onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
+     id: 'region-select' %>
 </div>
 <div id="today_map">
   <h1>

@@ -13,9 +13,32 @@ body {
   height: 95px;
 }
 
+#region-selector { 
+  position: relative;
+}
+#region-selector > h1 { display: inline-block; }
+
+#region-selector {
+}
+
+#whats-happening-h1 {
+  vertical-align: middle;
+}
+
+
+#region-select-button {
+  vertical-align: middle;
+}
+
+
+
 .pink {
   color: #FE2EF7;
 
+}
+
+#whats-happening-h1 {
+  display: inline-block;
 }
 
 #global_header a {

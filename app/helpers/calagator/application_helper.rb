@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def all_items
     venues = (Venue.ally + Venue.branch).to_a
-    events = Event.within_dates(Time.now, Time.now).to_a
+    events = Event.joins(:venue).within_dates(Time.now, Time.now).to_a
     venues + events
   end
 
