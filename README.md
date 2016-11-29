@@ -26,6 +26,8 @@ Add `secret_token` and `secret_key_base` to secrets.yml
 Change production.rb to
     config.serve_static_files = true
 
+Geokit is using the domain `localhost`. Keey an eye on that.
+
 
 About
 -----

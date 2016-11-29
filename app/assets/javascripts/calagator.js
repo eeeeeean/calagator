@@ -27,6 +27,10 @@ $(document).ready(function(){
     console.log('changed');
     window.location.href= location.href.split('?')[0] + '?region=' + this[this.selectedIndex].text
   });
+
+  $('a').click(function() {
+    location.reload();
+  });
 });
 
 
