@@ -5,13 +5,15 @@
       What's happening in
   </span>
   </h1>
-  <%= select_tag :region, 
-    options_from_collection_for_select(LOCATIONS, 
-                                       :name, 
-                                       :name, 
-                                       selected: session[:region]), 
-    onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
-    class: 'select-tag' %>
+  <div id='select-container'>
+    <%= select_tag :region, 
+      options_from_collection_for_select(LOCATIONS, 
+                                         :name, 
+                                         :name, 
+                                         selected: session[:region]), 
+      onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
+      class: 'select-tag' %>
+  </div>
 </div>
 <div id="today_map">
   <h1>

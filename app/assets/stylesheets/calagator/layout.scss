@@ -579,12 +579,21 @@ fieldset .no_label, fieldset .help {
   line-height: 50px;
 }
 
+#region-selector #select-container {
+  display: table-cell;
+  vertical-align: middle;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #title-span {
+  padding: 5px;
   display: table-cell;
   vertical-align: middle;
 }
 
 #region-selector h1 {
+  padding: 5px;
   display:  table-cell;
   vertical-align: middle;
 }
