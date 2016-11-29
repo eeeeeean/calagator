@@ -574,22 +574,28 @@ fieldset .no_label, fieldset .help {
 }
 
 #region-selector {
-  display: inline-block;
+  display: table;
   height:      50px;
   line-height: 50px;
-  vertical-align: middle;
 }
 
 #title-span {
+  display: table-cell;
   vertical-align: middle;
 }
 
 #region-selector h1 {
-  display: inline-block;
+  display:  table-cell;
+  vertical-align: middle;
+}
+
+#region-selector span {
+  display: table-cell;
   vertical-align: middle;
 }
 
 #region-selector .select-tag {
+  display: table-cell;
   vertical-align: middle;
 }
 
