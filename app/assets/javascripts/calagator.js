@@ -17,3 +17,8 @@ $(document).on('click','.expander_toggle', function(event) {
   $("#"+id_to_show).show(200);
   $e = event;
 });
+
+$(document).on('page:load ready',function(){
+});
+
+
