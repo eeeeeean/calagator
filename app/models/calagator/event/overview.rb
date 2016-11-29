@@ -3,7 +3,7 @@ module Calagator
 class Event < ActiveRecord::Base
   class Overview
 
-    def initialize location
+    def initialize location=nil
       @venues = Venue.within(REGION_RADIUS, origin: location )
       @events = Event.where(venue_id: @venues.map(&:id))
     end

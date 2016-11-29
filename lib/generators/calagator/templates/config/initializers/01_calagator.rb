@@ -19,7 +19,7 @@ Calagator.setup do |config|
     { name: 'Toyko, Japan',      gps: [35.6735408,139.5703016], zoom: 10 }
   ]
 
-  REGION_RADIUS = 1000000
+  REGION_RADIUS = 100
 
    # Optional username and password to use when accessing /admin pages
   # config.admin_username = 'admin'
