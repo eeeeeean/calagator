@@ -11,8 +11,8 @@
                                          :name, 
                                          :name, 
                                          selected: session[:region]), 
-      onchange: "window.location.href='#{request.base_url}?region=' + this[this.selectedIndex].text", 
-      class: 'select-tag' %>
+      class: 'select-tag',
+      id: 'region-select' %>
   </div>
 </div>
 <div id="today_map">

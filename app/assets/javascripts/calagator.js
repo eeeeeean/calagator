@@ -19,9 +19,14 @@ $(document).on('click','.expander_toggle', function(event) {
   $e = event;
 });
 
-$(document).on('page:load ready',function(){
+$(document).ready(function(){
   $('.select-tag').selectmenu( {
    width: 250 } );
+
+  $('.select-tag').on('selectmenuchange', function() {
+    console.log('changed');
+    window.location.href= location.href.split('?')[0] + '?region=' + this[this.selectedIndex].text
+  });
 });
 
 

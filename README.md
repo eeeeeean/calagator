@@ -21,6 +21,11 @@ Figaro manages the codes.
 You'll need a user and password in `application.yml` that follows this pattern:
     foo@bar.com: password123
 
+Add `secret_token` and `secret_key_base` to secrets.yml
+
+Change production.rb to
+    config.serve_static_files = true
+
 
 About
 -----

@@ -41,7 +41,11 @@ gem_group :development, :test do
   end
 end
 
-gem "calagator", (generating_dummy && { path: relative_calagator_path.to_s })
+if generating_dummy
+  gem 'calagator', { path: relative_calagator_path.to_s }
+else
+  gem 'calagator', :github => 'eeeeeean/calagator', :branch => :master
+end
 run "bundle install"
 rake "db:create"
 generate "calagator:install", (generating_dummy && "--dummy")
