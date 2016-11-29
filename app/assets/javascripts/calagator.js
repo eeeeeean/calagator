@@ -5,6 +5,7 @@
 //= require calagator/mapping
 //= require leaflet.awesome-markers
 //= require mustache
+//= require jquery-ui/selectmenu
 
 // Shows hidden section when a link is clicked, and hides the link.
 //
@@ -19,6 +20,8 @@ $(document).on('click','.expander_toggle', function(event) {
 });
 
 $(document).on('page:load ready',function(){
+  $('.select-tag').selectmenu( {
+   width: 250 } );
 });
 
 

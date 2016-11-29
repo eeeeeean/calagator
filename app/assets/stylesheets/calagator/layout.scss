@@ -13,32 +13,9 @@ body {
   height: 95px;
 }
 
-#region-selector { 
-  position: relative;
-}
-#region-selector > h1 { display: inline-block; }
-
-#region-selector {
-}
-
-#whats-happening-h1 {
-  vertical-align: middle;
-}
-
-
-#region-select-button {
-  vertical-align: middle;
-}
-
-
-
 .pink {
   color: #FE2EF7;
 
-}
-
-#whats-happening-h1 {
-  display: inline-block;
 }
 
 #global_header a {
@@ -594,6 +571,26 @@ fieldset .no_label, fieldset .help {
 
 #whats_happening h1 {
   padding-top: .2em
+}
+
+#region-selector {
+  display: inline-block;
+  height:      50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+#title-span {
+  vertical-align: middle;
+}
+
+#region-selector h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#region-selector .select-tag {
+  vertical-align: middle;
 }
 
 #project_description {
