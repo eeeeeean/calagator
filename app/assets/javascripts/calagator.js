@@ -19,19 +19,21 @@ $(document).on('click','.expander_toggle', function(event) {
   $e = event;
 });
 
-var ready;
-ready = function() {
+var dothethings;
+dothethings = function() {
+
   $('.select-tag').selectmenu( {
    width: 250 } );
 
   $('.select-tag').on('selectmenuchange', function() {
-    console.log('changed');
     window.location.href= location.href.split('?')[0] + '?region=' + this[this.selectedIndex].text
   });
 };
 
-$(document).on('page:load ready', ready);
-$(document).ready(ready);
+$(document).on('page:change', dothethings);
+$(document).on('page:load', dothethings);
+$(document).on('turbolinks:load', dothethings);
 
+$(document).ready(dothethings);
 
 
