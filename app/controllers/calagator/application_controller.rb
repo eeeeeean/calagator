@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def check_code
-    redirect_to code_error_path unless ENV.any? { |e| e[1] == params[:code] }
+    redirect_to code_error_path unless Figaro.env.any? { |e| e[1] == params[:code] }
   end
 
   def json_request?
