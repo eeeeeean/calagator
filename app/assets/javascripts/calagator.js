@@ -1,11 +1,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect
+//= require jquery-ui/selectmenu
 //= require calagator/forms
 //= require calagator/mapping
 //= require leaflet.awesome-markers
 //= require mustache
-//= require jquery-ui/selectmenu
 
 // Shows hidden section when a link is clicked, and hides the link.
 //
@@ -19,7 +19,8 @@ $(document).on('click','.expander_toggle', function(event) {
   $e = event;
 });
 
-$(document).ready(function(){
+var ready;
+ready = function() {
   $('.select-tag').selectmenu( {
    width: 250 } );
 
@@ -27,10 +28,10 @@ $(document).ready(function(){
     console.log('changed');
     window.location.href= location.href.split('?')[0] + '?region=' + this[this.selectedIndex].text
   });
+};
 
-  $('a').click(function() {
-    location.reload();
-  });
-});
+$(document).on('page:load ready', ready);
+$(document).ready(ready);
+
 
 
