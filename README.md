@@ -17,8 +17,7 @@ This is a gem you'll need to build yourself:
 Then create a new app with:
     calagator new my_app
 
-Figaro manages the codes.
-You'll need a user and password in `application.yml` that follows this pattern:
+Add users and codes to secrets.yml, for example:
     foo@bar.com: password123
 
 Add `secret_token` and `secret_key_base` to secrets.yml

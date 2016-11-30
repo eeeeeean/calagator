@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   helper Calagator::TagsHelper
   helper Calagator::TimeRangeHelper
 
+  require 'figaro'
+
   helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details
@@ -36,7 +38,8 @@ class ApplicationController < ActionController::Base
 protected
 
   def check_code
-    redirect_to code_error_path unless Figaro.env.any? { |e| e[1] == params[:code] }
+    puts "Secrets.yml: #{Rails.application.secrets.inspect}"
+    redirect_to code_error_path unless Rails.application.secrets.any? { |e| e[1] == params[:code] }
   end
 
   def json_request?
