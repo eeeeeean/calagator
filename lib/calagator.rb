@@ -26,6 +26,7 @@ require "utf8-cleaner"
 require "sunspot_rails"
 require "lucene_query"
 require "rack/contrib/jsonp"
+require "figaro"
 
 module Calagator
   mattr_accessor :title,
