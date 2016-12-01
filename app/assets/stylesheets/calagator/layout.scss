@@ -7,6 +7,27 @@ body {
   background: #fff;
 }
 
+#map-footer .legend {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.legend-box {
+  display: inline-block;
+  border: 1px solid black;
+  height: 10px;
+  width:  10px;
+}
+
+.legend-text {
+  display: inline-block;
+}
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
 #global_header {
   background: $header;
   position: relative;

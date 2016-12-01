@@ -20,9 +20,38 @@
     <%= map all_items, Calagator.venues_map_options
     .merge(center: @current_region[:gps], zoom: @current_region[:zoom]) %>
   </div>
-  <h1>
-    <%= link_to "(Click for bigger map)", map_events_path %>
-  </h1>
+  <div id='map-footer'>
+    <div class='legend'>
+      <div class='legend-box event-color'>
+      </div>
+      <div class='legend-text'>
+        Event
+      </div>
+      <div class='legend-box featured-color'>
+      </div>
+      <div class='legend-text'>
+        Featured event
+      </div>
+      <div class='legend-box emergency-color'>
+      </div>
+      <div class='legend-text'>
+        Emergency event
+      </div>
+      <div class='legend-box ally-color'>
+      </div>
+      <div class='legend-text'>
+        Ally 
+      </div>
+      <div class='legend-box branch-color'>
+      </div>
+      <div class='legend-text'>
+        Branch
+      </div>
+    </div>
+    <h1>
+      <%= link_to "(Click for bigger map)", map_events_path, id: 'bigger-map-link' %>
+    </h1>
+  </div>
 </div>
 <div id="whats_happening">
   <h3><%= link_to("View All &raquo;".html_safe, regional_index_events_path) if @overview.more %></h3>
