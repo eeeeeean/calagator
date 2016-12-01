@@ -3,11 +3,8 @@
 //= require jquery.timepicker
 
 var doallthethings;
-doallthethings = function(
-);
-
-$(document).on('page:load ready',function(){
-  // Initialize autocompletion for venues
+doallthethings = function() {
+// Initialize autocompletion for venues
   $("input.autocomplete").each(function() {
     $(this).attr('autocomplete', 'off').autocomplete({
       source: "/venues/autocomplete.json",
@@ -41,7 +38,10 @@ $(document).on('page:load ready',function(){
 
   // Set oldTime to allow time offset functionality
   oldTime = $("#time_start").timepicker('getTime');
-});
+};
+
+$(document).on('page:load ready', doallthethings);
+$(document).on('turbolinks:load', doallthethings);
 
 // Update "time_end" to maintain the same offset from "time_start" if "time_start" changes, and display a highlight to alert the user.
 $(document).on('change', '#time_start', function() {
