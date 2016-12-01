@@ -92,7 +92,7 @@ class Venue < ActiveRecord::Base
   end
 
   def marker_color
-    self.branch ? 'darkpurple' : 'darkblue'
+    self.branch ? 'purple' : 'blue'
   end
 
   # Display a single line address.

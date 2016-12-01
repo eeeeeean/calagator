@@ -34,6 +34,10 @@
    
  }
 
+  #region-selector h1 {
+    display: none;
+  }
+
   #global_header {
     background: none repeat scroll 0 0 $header;
     height: 80px;

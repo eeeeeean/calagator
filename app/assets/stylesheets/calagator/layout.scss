@@ -19,6 +19,12 @@ body {
   width:  10px;
 }
 
+.event-color{ background-color: #72b026;  }
+.featured-color { background-color: #F69730; }
+.emergency-color { background-color: #D63E2A; }
+.ally-color { background-color: #38AADD; }
+.branch-color { background-color: #D152B8; }
+
 .legend-text {
   display: inline-block;
 }
@@ -593,6 +599,7 @@ fieldset .no_label, fieldset .help {
   margin: 1em 4em 0 1em;}
 
 #whats_happening h1 {
+  display: table-cell;
   padding-top: .2em
 }
 
