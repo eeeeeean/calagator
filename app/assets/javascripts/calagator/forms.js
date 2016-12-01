@@ -2,6 +2,10 @@
 //= require jquery-ui/autocomplete
 //= require jquery.timepicker
 
+var doallthethings;
+doallthethings = function(
+);
+
 $(document).on('page:load ready',function(){
   // Initialize autocompletion for venues
   $("input.autocomplete").each(function() {

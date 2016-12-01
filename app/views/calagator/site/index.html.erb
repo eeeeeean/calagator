@@ -16,9 +16,6 @@
   </div>
 </div>
 <div id="today_map">
-  <h1>
-    Today's events
-  </h1>
   <div id='front_page_map' class='front_page_map'>
     <%= map all_items, Calagator.venues_map_options
     .merge(center: @current_region[:gps], zoom: @current_region[:zoom]) %>
