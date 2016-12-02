@@ -18,7 +18,7 @@
 <div id="today_map">
   <div id='front_page_map' class='front_page_map'>
     <%= map all_items, Calagator.venues_map_options
-    .merge(center: @current_region[:gps], zoom: @current_region[:zoom]) %>
+    .merge(center: @current_region_hash[:gps], zoom: @current_region_hash[:zoom]) %>
   </div>
   <div id='map-footer'>
     <div class='legend'>

@@ -6,6 +6,10 @@ Calagator::Engine.routes.draw do
   get 'about' => 'site#about'
   get 'faq' => 'site#faq'
 
+  get 'us/or/portland' => 'site#index'
+  get 'us/ny/new_york' => 'site#index'
+  get 'jp/tokyo' => 'site#index'
+
   get 'today' => 'site#today'
 
   get 'code_error' => 'site#code_error'

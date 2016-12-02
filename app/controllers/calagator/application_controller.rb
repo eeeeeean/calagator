@@ -22,8 +22,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '8813a7fec0bb4fbffd283a3868998eed'
   skip_before_action :verify_authenticity_token, if: :json_request?
 
-  def current_location
-    current_region_hash[:gps]
+  before_action :set_current_region
+
+  def set_current_region
+    session[:region] = params[:region] if params[:region]
+    @current_region_hash = current_region_hash
   end
 
   def current_region_hash

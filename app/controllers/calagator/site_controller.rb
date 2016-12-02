@@ -2,8 +2,6 @@ module Calagator
 
 class SiteController < Calagator::ApplicationController
 
-  before_action :set_current_region, only: [:index]
-
   # Raise exception, mostly for confirming that exception_notification works
   def omfg
     raise ArgumentError, "OMFG"
@@ -22,7 +20,7 @@ class SiteController < Calagator::ApplicationController
   end
 
   def index
-    @overview = Event::Overview.new current_location
+    @overview = Event::Overview.new current_region_hash
     respond_to do |format|
       format.html { }
       format.any  { redirect_to events_path(format: params[:format]) }
@@ -46,10 +44,6 @@ class SiteController < Calagator::ApplicationController
     raise ArgumentError if /^javascript:/.match(@url)
   end
 
-  def set_current_region
-    session[:region] = params[:region] if params[:region]
-    @current_region = current_region_hash
-  end
 end
 
 end

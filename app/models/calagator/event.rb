@@ -111,7 +111,7 @@ class Event < ActiveRecord::Base
 
   def self.within(radius, location)
     venues = Venue.within(radius, location)
-    where(venue_id: venues.map(&:id))
+    where(venue_id: venues(&:id))
   end
 
   def url=(value)

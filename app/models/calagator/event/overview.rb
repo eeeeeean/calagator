@@ -3,8 +3,9 @@ module Calagator
 class Event < ActiveRecord::Base
   class Overview
 
-    def initialize location=nil
-      @venues = Venue.within(REGION_RADIUS, origin: location )
+    def initialize current_region_hash=nil
+      @venues = Venue.within(REGION_RADIUS, origin: current_region_hash[:gps] )
+      @time_zone = current_region_hash[:zone]
       @events = Event.where(venue_id: @venues.map(&:id))
     end
 
