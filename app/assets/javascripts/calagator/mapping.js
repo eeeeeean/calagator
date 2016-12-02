@@ -6,11 +6,15 @@ var map = function(layer_constructor, map_tiles, div_id, center, zoom, rawMarker
   var map = new L.Map(div_id, {
       center: new L.LatLng(center[0], center[1]),
       zoom: zoom,
-      attributionControl: false
+      attributionControl: false,
+      zoomControl: false
   });
   L.control.attribution ({
     position: 'bottomright',
     prefix: false
+  }).addTo(map);
+  L.control.zoom ({
+    position: 'bottomright'
   }).addTo(map);
 
   map.addLayer(layer);
