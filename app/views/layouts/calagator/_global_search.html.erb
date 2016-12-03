@@ -7,8 +7,10 @@
         <%= text_field_tag 'query', @query, id: 'search_field', tabindex: 1 %>
     <% end %>
     </br>
-    Current time zone: 
-    <%= link_to Time.zone.name, root_path %>
+    <div id='time-zone-notice'>
+      Current time zone: 
+      <%= link_to Time.zone.name, root_path %>
+    </div>
   </div>
 <% end -%>
 

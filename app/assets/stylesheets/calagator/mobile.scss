@@ -16,6 +16,10 @@
     a.expander_toggle::before {
       content: "» "; }
 
+  #time-zone-notice {
+    display: none;
+}
+
   #today_map {
     margin-right: 30px;
     padding-right: 30px;
