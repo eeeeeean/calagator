@@ -3,7 +3,7 @@ Calagator.setup do |config|
   config.title = 'grokus'
 
   # Site tagline
-  config.tagline = '.xyz /us/or/portland'
+  config.tagline = ''
 
   # Site URL with trailing slash
   config.url = 'http://grokus.xyz' 
