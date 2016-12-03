@@ -6,11 +6,10 @@ Calagator.setup do |config|
   config.tagline = '.xyz /us/or/portland'
 
   # Site URL with trailing slash
-  config.url = 'http://my-calagator.org/'
-
+  config.url = 'http://grokus.xyz' 
   # Email address of administrator that will get exception notifications
   # and requests for assistance from users:
-  config.administrator_email = 'your@email.addr'
+  config.administrator_email = 'askgrokus@gmail.com'
 
   LOCATIONS = [
     { name: 'Luanda, Angola',    gps: [-8.8533562,13.2140636],  zoom: 11 },
