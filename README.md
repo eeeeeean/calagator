@@ -34,6 +34,8 @@ Change environment to
 `rake db:migrate`
 `rails s`
 
+Add cookie
+
 About
 -----
 

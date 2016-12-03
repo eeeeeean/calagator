@@ -15,6 +15,10 @@ module ApplicationHelper
     venues + events
   end
 
+  def authenticated?
+    session[:authenticated]
+  end
+
   def current_region
     session[:region]
   end

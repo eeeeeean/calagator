@@ -15,7 +15,7 @@
 
 <%= semantic_form_for(event, :html => {:id => 'event_form', :class => 'standard_form', :novalidate => 'novalidate'}) do |f| %>
   <%= f.inputs :name => "#{'Editing: ' unless event.new_record?} <em>#{event.title}</em>".html_safe do %>
-    <%= render 'layouts/calagator/code_input' %>
+    <%= render 'layouts/calagator/code_input' unless authenticated? %>
     <li class='string input'>
       <%= label_tag :emergency, 'Emergency?', class: 'label' %>
       <%= check_box_tag :emergency %>

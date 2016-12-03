@@ -42,8 +42,16 @@ class ApplicationController < ActionController::Base
 protected
 
   def check_code
-    puts "Secrets.yml: #{Rails.application.secrets.inspect}"
-    redirect_to code_error_path unless Rails.application.secrets.any? { |e| e[1] == params[:code] }
+    return if session[:authenticated]
+    if params[:code] && code_passes?
+      session[:authenticated] = true
+    else
+      redirect_to code_error_path unless params[:code] && code_passes?
+    end
+  end
+
+  def code_passes?
+    Rails.application.secrets.any? { |e| e[1] == params[:code] }
   end
 
   def json_request?

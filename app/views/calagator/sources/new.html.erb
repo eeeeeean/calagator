@@ -8,7 +8,7 @@
         <%= Calagator::Source::Parser.labels.to_sentence %>
       </p>
     </li>
-    <%= render 'layouts/calagator/code_input' %>
+    <%= render 'layouts/calagator/code_input' unless authenticated? %>
     <%= f.input :url, label: "URL", input_html: { autofocus: true } %>
   <% end %>
 
