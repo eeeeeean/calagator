@@ -7,7 +7,7 @@
     <%= yield :open_graph_tags %>
     <title>
       <%= "#{yield(:title)} » ".html_safe if content_for?(:title) -%>
-      <%= Calagator.title -%>: <%= Calagator.tagline -%>
+      <%= Calagator.title -%> <%= Calagator.tagline -%>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="apple-mobile-web-app-capable" content="yes" />
