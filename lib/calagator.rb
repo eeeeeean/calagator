@@ -46,10 +46,10 @@ module Calagator
     :venues_map_options,
     :blacklist_patterns
 
-  self.title = 'Calagator'
-  self.tagline = 'A Tech Calendar'
-  self.url = 'http://my-calagator.org/'
-  self.administrator_email = 'your@email.addr'
+  self.title = 'Grokus'
+  self.tagline = "What's happening"
+  self.url = 'http://grokus.xyz'
+  self.administrator_email = 'askgrokus@gmail.com'
   self.search_engine = :sql
   self.icalendar_sequence_offset = 0
   self.mapping_marker_color = 'green'
