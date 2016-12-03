@@ -1,3 +1,5 @@
+<%= content_for :title, 'Home' %>
+
 <% cache(Calagator::CacheObserver.daily_key_for("site_index", request)) do %>
 <div id='region-selector'>
   <h1 id='whats-happening-h1'>
