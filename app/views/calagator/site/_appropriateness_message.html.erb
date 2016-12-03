@@ -10,6 +10,12 @@ The theme-specific partial is retrieved from `themes/YOUR_THEME/views/site/_appr
     <%= render :partial => 'site/appropriateness' %>
   <%- rescue ActionView::MissingTemplate => e -%>
     <%#- No theme-specific appropriatenes partial was found. -%>
-    Please only add or import events that are of interest to our community. The more information you provide about the event, the easier it will be for people to find and choose to attend it.
+    Please note: the date and time for this event will be in 
+    <b>
+      <%= Time.zone.name %>
+    </b>
+    time. You may want to change your location
+    <%= link_to 'here', root_url %>
+    before creating an event.
   <%- end -%>
 </div>

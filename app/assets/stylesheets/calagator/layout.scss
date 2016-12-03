@@ -150,9 +150,8 @@ body {
 
 
 #content {
-  padding-right: 35px;
   min-height: 40em;
-  margin: 1em 30px 1em 40px;
+  margin: 1em 30px 1em 30px;
   position: relative;
 }
 
@@ -588,15 +587,15 @@ fieldset .no_label, fieldset .help {
 
 
 #whats_happening {
-  width: 40%;
+  width: 45%;
   float: left;
   margin: 1em 0 0 4em;
 }
 
 #today_map{
-  width: 600px;
+  width: 45%;
   float: right;
-  margin: 1em 4em 0 1em;}
+}
 
 #whats_happening h1 {
   display: table-cell;

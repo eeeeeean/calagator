@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_region
     session[:region] = params[:region] if params[:region]
+    Time.zone = current_region_hash[:zone]
     @current_region_hash = current_region_hash
   end
 
