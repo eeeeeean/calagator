@@ -20,13 +20,19 @@ Then create a new app with:
 Add users and codes to secrets.yml, for example:
     foo@bar.com: password123
 
-Add `secret_token` and `secret_key_base` to secrets.yml
+Add `secret_token` and `secret_key_base` to secrets.yml. You can generate fresh
+ones with:
+`rake secret`
 
-Change production.rb to
+Add the following to assets.rb
+`Rails.application.config.assets.precompile += %w( *.js ^[^_]*.css *.css.erb )`
+
+Change environment to
     config.serve_static_files = true
 
-Geokit is using the domain `localhost`. Keey an eye on that.
-
+`rake assets:precompile`
+`rake db:migrate`
+`rails s`
 
 About
 -----
