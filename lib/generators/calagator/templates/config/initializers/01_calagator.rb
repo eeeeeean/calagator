@@ -12,10 +12,7 @@ Calagator.setup do |config|
   config.administrator_email = 'askgrokus@gmail.com'
 
   LOCATIONS = [
-    { name: 'Luanda, Angola',    gps: [-8.8533562,13.2140636],  zoom: 11, zone: 'West Central Africa'},
-    { name: 'New York, NY, USA', gps: [40.7250231,-74.0056809], zoom: 10, zone: 'Eastern Time (US & Canada)'},
-    { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692], zoom: 10, zone: 'Pacific Time (US & Canada)'},
-    { name: 'Toyko, Japan',      gps: [35.6735408,139.5703016], zoom: 10, zone: 'Tokyo'}
+    { name: 'Portland, OR, USA', gps: [45.532182,-122.6648692], zoom: 10, zone: 'Pacific Time (US & Canada)'}
   ]
 
   REGION_RADIUS = 100

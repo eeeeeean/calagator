@@ -107,9 +107,20 @@ body {
 }
 
 #search_form {
+  width: 300px;
+  float: right;
   position:absolute;
   right: 30px;
   top: 15px;
+}
+
+#time-zone-notice {
+  float: right;
+
+}
+
+#search_line {
+  float: right;
 }
 
 #admin_search_form {
