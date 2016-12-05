@@ -1,4 +1,7 @@
 <%= content_for :title, 'Home' %>
+<% content_for :head do %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
 
 <% cache(Calagator::CacheObserver.daily_key_for("site_index", request)) do %>
 <div id='region-selector'>
