@@ -71,6 +71,7 @@ class EventsController < Calagator::ApplicationController
     saver = Event::Saver.new(@event, params.permit!)
     respond_to do |format|
       if saver.save
+        logger.info "#{@event.title} was saved at #{Time.now} by #{session[:authenticated]}"
         format.html {
           flash[:success] = 'Event was successfully saved.'
           if saver.has_new_venue?
@@ -94,6 +95,7 @@ class EventsController < Calagator::ApplicationController
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
+    logger.info "#{@event.title} was destroyed at #{Time.now} by #{session[:authenticated]}"
     @event.destroy
 
     respond_to do |format|
@@ -158,6 +160,10 @@ class EventsController < Calagator::ApplicationController
       flash[:failure] = "You are not permitted to modify this event."
       redirect_to root_path
     end
+  end
+
+  def log_action
+
   end
 end
 

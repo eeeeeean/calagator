@@ -10,6 +10,7 @@ class SourcesController < Calagator::ApplicationController
     @importer = Source::Importer.new(params.permit![:source])
     respond_to do |format|
       if @importer.import
+        logger.info "#{@importer.import.inspect} was saved at #{Time.now} by #{session[:authenticated]}"
         redirect_target = @importer.events.one? ? @importer.events.first : events_path
         format.html { redirect_to redirect_target, flash: { success: render_to_string(layout: false) } }
         format.xml  { render xml: @importer.source, events: @importer.events }
@@ -72,6 +73,7 @@ class SourcesController < Calagator::ApplicationController
   def create_or_update
     respond_to do |format|
       if @source.update_attributes(params.permit![:source])
+        logger.info "#{@source.inspect} was saved at #{Time.now} by #{session[:authenticated]}"
         format.html { redirect_to @source, notice: 'Source was successfully saved.' }
         format.xml  { render xml: @source, status: :created, location: @source }
       else
@@ -86,6 +88,7 @@ class SourcesController < Calagator::ApplicationController
   # DELETE /sources/1.xml
   def destroy
     @source = Source.find(params[:id])
+    logger.info "#{@source.inspect} was saved at #{Time.now} by #{session[:authenticated]}"
     @source.destroy
 
     respond_to do |format|

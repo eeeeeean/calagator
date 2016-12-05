@@ -1,13 +1,16 @@
 <div id="events_subnav" class="subnav">
     <ul class="clearfix">
-      <li><%= link_to 'Regional events', root_url,
+      <li><%= link_to 'Regional', root_url,
               :class => subnav_class_for("events", "regional_index") + " " + subnav_class_for("site", "index") %>
       </li>
-      <li><%= link_to 'All events', events_url,
+      <li><%= link_to 'All', events_url,
               :class => subnav_class_for("events", "index") %>
       </li>
-      <li><%= link_to 'Add an event', new_event_url,
+      <li><%= link_to 'Add', new_event_url,
               :class => subnav_class_for("events", "new") %>
+      </li>
+      <li><%= link_to 'Import', new_source_url,
+            :class => subnav_class_for("sources", "new") %>
       </li>
     </ul>
 </div>

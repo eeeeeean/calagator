@@ -108,6 +108,7 @@ class VenuesController < Calagator::ApplicationController
   def create
     CreateOrUpdate.new(self).call
   end
+
   alias_method :update, :create
 
   class CreateOrUpdate < SimpleDelegator
@@ -124,6 +125,7 @@ class VenuesController < Calagator::ApplicationController
     end
 
     def save
+      logger.info "#{venue.title} was saved at #{Time.now} by #{session[:authenticated]}"
       venue.update_attributes params.permit![:venue].to_h
     end
 
@@ -178,6 +180,7 @@ class VenuesController < Calagator::ApplicationController
     end
 
     def destroy
+      logger.info "#{venue.title} was destroyed at #{Time.now} by #{session[:authenticated]}"
       venue.destroy
       respond_to do |format|
         format.html { redirect_to venues_path, flash: { success: %("#{venue.title}" has been deleted) } }

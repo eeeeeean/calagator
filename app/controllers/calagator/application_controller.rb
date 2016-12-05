@@ -39,19 +39,23 @@ class ApplicationController < ActionController::Base
     session[:region] ||= 'Portland, OR, USA'
   end
 
+  def log_action
+    logger
+  end
+
 protected
 
   def check_code
     return if session[:authenticated]
-    if params[:code] && code_passes?
-      session[:authenticated] = true
+    if params[:code] && code_key.present?
+      session[:authenticated] = code_key
     else
       redirect_to code_error_path unless params[:code] && code_passes?
     end
   end
 
-  def code_passes?
-    Rails.application.secrets.any? { |e| e[1] == params[:code] }
+  def code_key
+    Rails.application.secrets.find { |e| e[1] == params[:code] }[0].to_s
   end
 
   def json_request?
