@@ -55,7 +55,8 @@ protected
   end
 
   def code_key
-    Rails.application.secrets.find { |e| e[1] == params[:code] }[0].to_s
+    result = Rails.application.secrets.find { |e| e[1] == params[:code] }
+    result ? [0].to_s : nil
   end
 
   def json_request?
